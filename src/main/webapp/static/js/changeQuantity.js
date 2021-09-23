@@ -13,7 +13,9 @@ function changeQuantity() {
     for (const minusButton of minusButtons) {
         minusButton.addEventListener('click', () => {
             let amount = (minusButton.parentElement.childNodes[3]);
-            amount.innerText = (parseInt(amount.innerText) - 1).toString();
+            if (parseInt(amount.innerText) > 1) {
+                amount.innerText = (parseInt(amount.innerText) - 1).toString();
+            }
         })
     }
 }
