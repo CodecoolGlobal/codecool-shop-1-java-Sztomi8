@@ -16,6 +16,8 @@ function fillModal() {
                         <h5>${product.name}</h5>
                         <p class="mb-0"><span><strong>${product.defaultPrice} ${product.defaultCurrency}</strong></span></p>
                       </div>
+                      <img class="d-flex z-depth-1 rounded mr-3" width="24px"
+                           src='/static/img/red_x.png' alt="Red X">
                     </div>
                 `
             }
