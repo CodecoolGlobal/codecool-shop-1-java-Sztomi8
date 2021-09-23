@@ -30,13 +30,6 @@ public class SessionAddJsonServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-
-   /*
-        ShoppingCart cart = (ShoppingCart) request.getSession().getAttribute("cart");
-        cart.addToCart("Banana", 2);
-
-    */
         HttpSession session = request.getSession();
         if (session.isNew()) {
             shoppingCart = new HashMap<String, Integer>();

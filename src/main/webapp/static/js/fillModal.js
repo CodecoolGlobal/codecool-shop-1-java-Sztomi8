@@ -1,6 +1,8 @@
 
 export function fillModalExport () {fillModal()}
 
+import {removeItemExport} from "./removeItem.js";
+
 function fillModal() {
     const cartItemContainer = document.getElementById("current-item-container");
     fetch('/api/session/get')
@@ -16,12 +18,13 @@ function fillModal() {
                         <h5>${product.name}</h5>
                         <p class="mb-0"><span><strong>${product.defaultPrice} ${product.defaultCurrency}</strong></span></p>
                       </div>
-                      <img class="d-flex z-depth-1 rounded mr-3" width="24px"
+                      <img id="${product.name}" class="d-flex z-depth-1 rounded mr-3 remove-item-from-cart" width="24px"
                            src='/static/img/red_x.png' alt="Red X">
                     </div>
                 `
             }
             cartItemContainer.innerHTML = newContent;
+            removeItemExport();
         }));
 
 
